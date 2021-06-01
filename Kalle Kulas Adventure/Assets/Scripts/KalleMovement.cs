@@ -30,7 +30,7 @@ public class KalleMovement : MonoBehaviour
     void Update()
     {
         Jump();
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"),0f,0f);
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"),0f,0f); //För att Kalle ska kunna hoppa och gå.
         transform.position += movement * Time.deltaTime * MovementSpeed;
 
 
@@ -53,7 +53,7 @@ public class KalleMovement : MonoBehaviour
     void Jump(){
         mx = Input.GetAxis("Horizontal");
         var velocity2 = Mathf.Abs(rb.velocity.y);
-        var velocity = GetComponent<Rigidbody2D>().velocity.y;      //Använd för att lösa dubbelhoppsmomentum
+        var velocity = GetComponent<Rigidbody2D>().velocity.y;      //Kod för att han bara ska kunna dubbel hoppa och inte mer.
         var JumpForceTrue = JumpForce * MoveMultiply;
         var DbJumpForceTrue = DbJumpForce * MoveMultiply;
 
